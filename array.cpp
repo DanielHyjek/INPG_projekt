@@ -30,3 +30,5 @@ void copy(int*** nowa, int** old, int rows, int cols)
             (*nowa)[i][j]=old[i][j];
     return;
 }
+
+
