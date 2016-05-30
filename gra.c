@@ -1,25 +1,33 @@
-e robi#include <stdio.h>
+#include <stdio.h>
 #include <stdlib.h>
 #include "gra.h"
 #include "array.h"
 
-char sprawdz(char** tab,char ***ntab,int x,int y)
-{
-    int i,k,m,n;
-    int suma=0;
-    for(i=1;i<(x-1);i++){
-        for(k=1;k<(y-1);k++) {
-            for(m=(i-1);m<(i+2);m++) {
-                for(n=(k-1);n<(k+2);n++){
-                    if(tab[m][n]=='*' ) suma++;
-                }
-            }
-            if(tab[i][k]=='*') suma--;
-            if(tab[i][k]=='*'){
-                if(suma<2||suma>3) (*ntab)[i][k]=' ';
-            }
-            if(tab[i][k]==' ' && suma==3) (*ntab)[i][k]='*';
-            suma=0;
-        }
-    }
+
+
+int otocenie(int **tab_copy, int row, int col){
+int tmp=0;
+if(row!=0){
+	if(col!=0) if(tab_copy[row-1][col-1]==1) tmp++;
+	if(tab_copy[row-1][col]==1) tmp++;
+	if(col<(COLS-1)) if(tab_copy[row-1][col+1]==1) tmp++;
+}
+if(row!=(ROWS-1)){
+	if(col!=0) if(tab_copy[row+1][col-1]==1) tmp++;
+	if(tab_copy[row+1][col]==1) tmp++;
+	if(col<(COLS-1)) if(tab_copy[row+1][col+1]==1) tmp++;
+}
+
+	if(col!=0) if(tab_copy[row][col-1]==1) tmp++;
+	if(col<(COLS-1)) if(tab_copy[row][col+1]==1) tmp++;
+return tmp;
+}
+
+void cykl(int ***tab, int **tab_copy, int row, int col, int kom){
+	if(tab_copy[row][col]==1){
+		if(kom>3 || kom<2) (*tab)[row][col]=0;
+	}
+	if(tab_copy[row][col]==0 && kom==3){
+		(*tab)[row][col]=1;
+	}
 }
