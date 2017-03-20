@@ -1,7 +1,7 @@
 #ifndef FILE_H_
 #define FILE_H_
 
-void load(int***);
+void loadd(int***);
 void save(int***);
 
 #endif
