@@ -4,13 +4,10 @@ close all;
 load('pomiary.mat');
 pomiary=transpose(pomiary);
 czas = linspace(0,37670,length(pomiary));
-lit1=0;
+lit1=123;
 lit2=0;
 
-
-k=1;
-T=40;
-tau=12;
+zmia
 
 k=1.075;
 T=44.3;
