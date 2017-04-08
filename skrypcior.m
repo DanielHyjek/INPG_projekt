@@ -3,7 +3,7 @@ close all;
 
 load('pomiary.mat');
 pomiary=transpose(pomiary);
-czas = linspace(0,300,length(pomiary));
+czas = linspace(0,37670,length(pomiary));
 lit1=0;
 lit2=0;
 
