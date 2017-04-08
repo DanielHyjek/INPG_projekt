@@ -28,7 +28,7 @@ e=pomiary-model;
 blad1=0.1*sum ( e.^2 )
 
 
-k=1.0755;
+k=1.08;
 T=50;
 tau=22;
 %[ld, md]=pade(tau,15);
