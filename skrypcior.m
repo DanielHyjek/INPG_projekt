@@ -5,6 +5,7 @@ load('pomiary.mat');
 pomiary=transpose(pomiary);
 czas = linspace(0,37670,length(pomiary));
 
+lit0=0;
 lit1=32131232131231;
 lit2=0;
 
